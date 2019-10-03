@@ -15,7 +15,7 @@ def plot_history(history):
     plt.plot(history.history[key])
     plt.plot(history.history['val_'+key])
     plt.legend(['train', 'validate'])
-    plt.title(key.capitalize())
+    plt.title(key)
     plt.xlabel('epoch')
     plt.ylabel(key)
 
