@@ -9,6 +9,15 @@ def plot_history(history, figsize = (12, 6)):
   # Convert to list and sort (so that panels have consistent order).
   keys = list(keys)
   keys.sort()
+
+  # Move loss to first place (if present).
+  #
+  try:
+    keys.remove('loss')
+  except ValueError:
+    pass
+  else:
+    keys.insert(0, 'loss')
   
   for i, key in enumerate(keys):
     fig.add_subplot(1, len(keys), i+1)
@@ -20,4 +29,3 @@ def plot_history(history, figsize = (12, 6)):
     plt.ylabel(key)
 
   plt.show()
-
