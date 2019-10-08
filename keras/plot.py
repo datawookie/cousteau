@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 
-def plot_history(history):
-  fig = plt.figure(figsize = (12, 6))
+def plot_history(history, figsize = (12, 6)):
+  fig = plt.figure(figsize = figsize)
   
   keys = [k.replace('val_', '') for k in list(history.history)]
   # Remove duplicates.
