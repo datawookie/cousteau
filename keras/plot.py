@@ -27,9 +27,10 @@ def plot_history(history, figsize=(12, 6), log=None):
     plt.title(key)
     plt.xlabel('epoch')
     plt.ylabel(key)
-    if 'y' in log:
-      plt.yscale('log')
-    if 'x' in log:
-      plt.xscale('log')
+    if log is not None:
+      if 'y' in log:
+        plt.yscale('log')
+      if 'x' in log:
+        plt.xscale('log')
 
   plt.show()
