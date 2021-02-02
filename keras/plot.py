@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 
-def plot_history(history, figsize = (12, 6)):
+def plot_history(history, figsize=(12, 6), log=None):
   fig = plt.figure(figsize = figsize)
   
   keys = [k.replace('val_', '') for k in list(history.history)]
@@ -27,5 +27,9 @@ def plot_history(history, figsize = (12, 6)):
     plt.title(key)
     plt.xlabel('epoch')
     plt.ylabel(key)
+    if 'y' in log:
+      plt.yscale('log')
+    if 'x' in log:
+      plt.xscale('log')
 
   plt.show()
